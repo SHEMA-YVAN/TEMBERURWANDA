@@ -1,10 +1,9 @@
 <script setup>
-import video from'/video.mp4'
+// no import needed
 </script>
 
 <template>
 
-<!-- HERO WITH VIDEO BACKGROUND -->
 <section class="relative h-screen flex items-center justify-center text-white overflow-hidden">
 
   <!-- VIDEO -->
@@ -15,8 +14,9 @@ import video from'/video.mp4'
     muted
     playsinline
   >
-    <source :src="video" type="video/mp4" />
+    <source src="/video.mp4" type="video/mp4" />
   </video>
+
 
   <!-- DARK OVERLAY -->
   <div class="absolute inset-0 bg-black/50"></div>
