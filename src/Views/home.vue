@@ -13,6 +13,7 @@ import video from'/video.mp4'
     autoplay
     loop
     muted
+    playsinline
   >
     <source :src="video" type="video/mp4" />
   </video>
