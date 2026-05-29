@@ -1,5 +1,5 @@
 <script setup>
-import video from'/src/Assets/Image/video.mp4'
+import video from'/video.mp4'
 </script>
 
 <template>

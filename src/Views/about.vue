@@ -2,9 +2,9 @@
 import { ref, onMounted } from "vue"
 
 const images = [
-  "/src/Assets/Image/about1.jpg",
-  "/src/Assets/Image/about2.jpg",
-  "/src/Assets/Image/about3.jpg",
+  "/about1.jpg",
+  "/about2.jpg",
+  "/about3.jpg",
 ]
 
 const currentImage = ref(0)
