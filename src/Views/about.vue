@@ -13,7 +13,7 @@ onMounted(() => {
   setInterval(() => {
     currentImage.value =
       (currentImage.value + 1) % images.length
-  }, 3000)
+  }, 2500)
 })
 </script>
 

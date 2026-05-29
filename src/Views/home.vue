@@ -24,7 +24,7 @@ const video = "/src/Assets/Image/video.mp4"
   <div class="relative text-center px-6 max-w-3xl">
 
     <h1 class="text-4xl md:text-6xl font-bold mb-4">
-      Discover Rwanda
+      Tembera U Rwanda
     </h1>
 
     <p class="text-xl text-green-200 mb-6">
