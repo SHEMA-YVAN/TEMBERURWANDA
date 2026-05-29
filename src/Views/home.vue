@@ -1,5 +1,5 @@
 <script setup>
-const video = "/src/Assets/Image/video.mp4"
+import video from'/src/Assets/Image/video.mp4'
 </script>
 
 <template>
@@ -11,8 +11,8 @@ const video = "/src/Assets/Image/video.mp4"
   <video
     class="absolute w-full h-full object-cover"
     autoplay
-    muted
     loop
+    muted
   >
     <source :src="video" type="video/mp4" />
   </video>
