@@ -1,6 +1,20 @@
 <script setup>
+import { ref } from "vue"
 import { state, t } from "../i18n"
 import heroPoster from "../Assets/Image/about1.jpg"
+
+const heroVideo = ref(null)
+
+const playHeroVideo = () => {
+  heroVideo.value?.play().catch(() => {})
+}
+
+const recoverHeroVideo = () => {
+  if (!heroVideo.value) return
+
+  heroVideo.value.load()
+  playHeroVideo()
+}
 </script>
 
 <template>
@@ -9,15 +23,19 @@ import heroPoster from "../Assets/Image/about1.jpg"
 
   <!-- VIDEO -->
   <video
+    ref="heroVideo"
     class="absolute inset-0 w-full h-full object-cover object-center"
     autoplay
     loop
     muted
     playsinline
-    preload="metadata"
+    preload="auto"
     :poster="heroPoster"
+    @canplay="playHeroVideo"
+    @stalled="recoverHeroVideo"
+    @error="recoverHeroVideo"
   >
-    <source src="/video6.mp4" type="video/mp4" />
+    <source src="/kivu.mp4" type="video/mp4" />
   </video>
 
   <!-- DARK OVERLAY -->
