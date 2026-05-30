@@ -4,6 +4,7 @@ import { state, t } from "../i18n"
 import contactHero1 from "../Assets/Image/gisozi.jpg"
 import contactHero2 from "../Assets/Image/inema.jpg"
 import contactHero3 from "../Assets/Image/mount.jpg"
+import mapImage from "../Assets/Image/map.png"
 
 const contactHeroImages = [contactHero1, contactHero2, contactHero3]
 const currentHeroImage = ref(0)
@@ -143,12 +144,13 @@ onUnmounted(() => {
     {{ t[state.lang].findUs }}
   </h2>
 
-  <div class="bg-gray-200 h-96 rounded-xl flex items-center justify-center">
-
-    <p class="text-gray-600 text-lg">
-      {{ t[state.lang].mapPlaceholder }}
-    </p>
-
+  <div class="h-96 overflow-hidden rounded-xl shadow-lg">
+    <img
+      :src="mapImage"
+      :alt="t[state.lang].findUs"
+      class="h-full w-full object-cover"
+      loading="lazy"
+    />
   </div>
 
 </section>

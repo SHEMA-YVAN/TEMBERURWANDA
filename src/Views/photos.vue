@@ -18,15 +18,15 @@ const galleryImages = Object.entries(
   }))
 
 const galleryTileClasses = [
-  "h-96 md:col-span-2 md:row-span-2",
+  "h-120",
   "h-80",
-  "h-72",
   "h-96",
-  "h-80 md:col-span-2",
   "h-72",
-  "h-96 md:row-span-2",
-  "h-80",
-  "h-96 md:col-span-2",
+  "h-112",
+  "h-88",
+  "h-128",
+  "h-84",
+  "h-96",
 ]
 </script>
 
@@ -57,12 +57,12 @@ const galleryTileClasses = [
 <!-- GALLERY GRID -->
 <section class="py-20 px-5 md:px-10 lg:px-16 bg-gray-50">
 
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 auto-rows-fr gap-5">
+  <div class="max-w-7xl mx-auto columns-1 md:columns-2 xl:columns-3 2xl:columns-4 gap-5 space-y-5">
 
     <figure
       v-for="(image, index) in galleryImages"
       :key="image.src"
-      class="group relative overflow-hidden rounded-lg bg-white shadow-lg"
+      class="group relative mb-5 break-inside-avoid overflow-hidden rounded-lg bg-white shadow-lg"
       :class="galleryTileClasses[index % galleryTileClasses.length]"
     >
       <img
