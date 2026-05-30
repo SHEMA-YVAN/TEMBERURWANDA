@@ -5,7 +5,7 @@ import heroPoster from "../Assets/Image/about1.jpg"
 
 <template>
 
-<section class="relative h-96 md:h-[680px] flex items-center justify-center text-white overflow-hidden">
+<section class="relative h-96 md:h-170 flex items-center justify-center text-white overflow-hidden">
 
   <!-- VIDEO -->
   <video

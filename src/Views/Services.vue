@@ -1,15 +1,34 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from "vue"
 import { state, t } from "../i18n"
 import { RouterLink } from "vue-router"
+import serviceHero1 from "../Assets/Image/virunga.jpg"
+import serviceHero2 from "../Assets/Image/akagera.jpg"
+import serviceHero3 from "../Assets/Image/nyungwe.jpg"
+
+const serviceHeroImages = [serviceHero1, serviceHero2, serviceHero3]
+const currentHeroImage = ref(0)
+let heroTimer
+
+onMounted(() => {
+  heroTimer = setInterval(() => {
+    currentHeroImage.value =
+      (currentHeroImage.value + 1) % serviceHeroImages.length
+  }, 3000)
+})
+
+onUnmounted(() => {
+  clearInterval(heroTimer)
+})
 </script>
 
 <template>
 
 <!-- HERO -->
-<section class="relative h-96 md:h-[640px] flex items-center justify-center text-white overflow-hidden">
+<section class="relative h-96 md:h-160 flex items-center justify-center text-white overflow-hidden">
 
   <img
-    src="/src/Assets/Image/about1.jpg"
+    :src="serviceHeroImages[currentHeroImage]"
     class="absolute inset-0 w-full h-full object-cover object-center"
   />
 

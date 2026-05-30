@@ -17,13 +17,23 @@ const galleryImages = Object.entries(
       .replace(/[_-]+/g, " "),
   }))
 
-const galleryHeights = [560, 420, 720, 500, 640, 460, 780, 540, 680]
+const galleryTileClasses = [
+  "h-96 md:col-span-2 md:row-span-2",
+  "h-80",
+  "h-72",
+  "h-96",
+  "h-80 md:col-span-2",
+  "h-72",
+  "h-96 md:row-span-2",
+  "h-80",
+  "h-96 md:col-span-2",
+]
 </script>
 
 <template>
 
 <!-- HERO -->
-<section class="relative h-96 md:h-[640px] flex items-center justify-center text-white overflow-hidden">
+<section class="relative h-96 md:h-160 flex items-center justify-center text-white overflow-hidden">
 
   <img
     src="/src/Assets/Image/about1.jpg"
@@ -45,19 +55,28 @@ const galleryHeights = [560, 420, 720, 500, 640, 460, 780, 540, 680]
 </section>
 
 <!-- GALLERY GRID -->
-<section class="py-20 px-5 md:px-10 lg:px-16 bg-white">
+<section class="py-20 px-5 md:px-10 lg:px-16 bg-gray-50">
 
-  <div class="max-w-7xl mx-auto columns-1 md:columns-2 xl:columns-3 gap-6 space-y-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 auto-rows-fr gap-5">
 
-    <img
+    <figure
       v-for="(image, index) in galleryImages"
       :key="image.src"
-      :src="image.src"
-      :alt="image.alt"
-      class="w-full break-inside-avoid object-cover rounded-lg shadow-lg hover:scale-[1.015] transition duration-300"
-      :style="{ height: `${galleryHeights[index % galleryHeights.length]}px` }"
-      loading="lazy"
-    />
+      class="group relative overflow-hidden rounded-lg bg-white shadow-lg"
+      :class="galleryTileClasses[index % galleryTileClasses.length]"
+    >
+      <img
+        :src="image.src"
+        :alt="image.alt"
+        class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 opacity-0 transition duration-300 group-hover:opacity-100">
+        <figcaption class="text-sm font-semibold text-white line-clamp-2">
+          {{ image.alt }}
+        </figcaption>
+      </div>
+    </figure>
 
   </div>
 

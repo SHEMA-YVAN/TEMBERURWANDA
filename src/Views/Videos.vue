@@ -6,7 +6,7 @@ import videoPoster from "../Assets/Image/about1.jpg"
 <template>
 
 <!-- HERO -->
-<section class="relative h-96 md:h-[640px] flex items-center justify-center text-white overflow-hidden">
+<section class="relative h-96 md:h-160 flex items-center justify-center text-white overflow-hidden">
 
   <img
     src="/src/Assets/Image/about1.jpg"
@@ -36,7 +36,7 @@ import videoPoster from "../Assets/Image/about1.jpg"
   <div class="rounded-2xl overflow-hidden shadow-2xl">
 
     <video
-      class="w-full h-[500px] object-cover"
+      class="w-full h-96 md:h-125 object-cover"
       autoplay
       muted
       loop

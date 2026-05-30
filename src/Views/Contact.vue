@@ -1,14 +1,33 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from "vue"
 import { state, t } from "../i18n"
+import contactHero1 from "../Assets/Image/gisozi.jpg"
+import contactHero2 from "../Assets/Image/inema.jpg"
+import contactHero3 from "../Assets/Image/mount.jpg"
+
+const contactHeroImages = [contactHero1, contactHero2, contactHero3]
+const currentHeroImage = ref(0)
+let heroTimer
+
+onMounted(() => {
+  heroTimer = setInterval(() => {
+    currentHeroImage.value =
+      (currentHeroImage.value + 1) % contactHeroImages.length
+  }, 3000)
+})
+
+onUnmounted(() => {
+  clearInterval(heroTimer)
+})
 </script>
 
 <template>
 
 <!-- HERO -->
-<section class="relative h-96 md:h-[640px] flex items-center justify-center text-white overflow-hidden">
+<section class="relative h-96 md:h-160 flex items-center justify-center text-white overflow-hidden">
 
   <img
-    src="/src/Assets/Image/about1.jpg"
+    :src="contactHeroImages[currentHeroImage]"
     class="absolute inset-0 w-full h-full object-cover object-center"
   />
 

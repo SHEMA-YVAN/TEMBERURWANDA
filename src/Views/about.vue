@@ -26,7 +26,7 @@ onMounted(() => {
 
 <!-- HERO SECTION -->
 <section
-  class="relative h-96 md:h-[680px] bg-cover bg-center flex items-center justify-center text-white transition-all duration-1000"
+  class="relative h-96 md:h-170 bg-cover bg-center flex items-center justify-center text-white transition-all duration-1000"
   :style="{ backgroundImage: `url(${images[currentImage]})` }"
 >
 
