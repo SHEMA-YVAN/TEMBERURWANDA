@@ -17,13 +17,13 @@ const galleryImages = Object.entries(
       .replace(/[_-]+/g, " "),
   }))
 
-const galleryHeights = [320, 240, 380, 280, 460, 300, 360, 260, 420]
+const galleryHeights = [560, 420, 720, 500, 640, 460, 780, 540, 680]
 </script>
 
 <template>
 
 <!-- HERO -->
-<section class="relative h-screen flex items-center justify-center text-white overflow-hidden">
+<section class="relative h-96 md:h-[640px] flex items-center justify-center text-white overflow-hidden">
 
   <img
     src="/src/Assets/Image/about1.jpg"
@@ -45,16 +45,16 @@ const galleryHeights = [320, 240, 380, 280, 460, 300, 360, 260, 420]
 </section>
 
 <!-- GALLERY GRID -->
-<section class="py-16 px-6 md:px-20 bg-white">
+<section class="py-20 px-5 md:px-10 lg:px-16 bg-white">
 
-  <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+  <div class="max-w-7xl mx-auto columns-1 md:columns-2 xl:columns-3 gap-6 space-y-6">
 
     <img
       v-for="(image, index) in galleryImages"
       :key="image.src"
       :src="image.src"
       :alt="image.alt"
-      class="w-full break-inside-avoid object-cover rounded-xl shadow hover:scale-[1.02] transition duration-300"
+      class="w-full break-inside-avoid object-cover rounded-lg shadow-lg hover:scale-[1.015] transition duration-300"
       :style="{ height: `${galleryHeights[index % galleryHeights.length]}px` }"
       loading="lazy"
     />

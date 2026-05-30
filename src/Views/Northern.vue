@@ -5,7 +5,7 @@ import { state, t } from "../i18n"
 <template>
 
 <!-- HERO -->
-<section class="relative h-screen flex items-center justify-center text-white overflow-hidden">
+<section class="relative h-96 md:h-[640px] flex items-center justify-center text-white overflow-hidden">
 
   <img
     src="/src/Assets/Image/virunga.jpg"
