@@ -1,10 +1,15 @@
 <script setup>
 import { ref, onMounted } from "vue"
+import { state, t } from "../i18n"
+import about1 from "../Assets/Image/about1.jpg"
+import about2 from "../Assets/Image/about2.jpg"
+import about3 from "../Assets/Image/about3.jpg"
+import whyImage from "../Assets/Image/why.jpg"
 
 const images = [
-  "/about1.jpg",
-  "/about2.jpg",
-  "/about3.jpg",
+  about1,
+  about2,
+  about3,
 ]
 
 const currentImage = ref(0)
@@ -19,7 +24,6 @@ onMounted(() => {
 
 <template>
 
-
 <!-- HERO SECTION -->
 <section
   class="relative h-screen bg-cover bg-center flex items-center justify-center text-white transition-all duration-1000"
@@ -31,18 +35,16 @@ onMounted(() => {
   <div class="relative text-center px-6 max-w-2xl">
 
     <h1 class="text-5xl font-bold mb-4">
-      About Tembera u Rwanda
+      {{ t[state.lang].aboutTitle }}
     </h1>
 
     <p class="text-xl text-green-200">
-      Discover who we are and our mission to promote tourism in Rwanda
+      {{ t[state.lang].aboutSubtitle }}
     </p>
 
   </div>
 
 </section>
-
-
 
 <!-- INTRO SECTION -->
 <section class="py-16 px-6 md:px-20 bg-white">
@@ -50,24 +52,22 @@ onMounted(() => {
   <div class="grid md:grid-cols-2 gap-10 items-center">
 
     <img
-      src="/src/Assets/Image/why.jpg"
+      :src="whyImage"
       class="rounded-xl shadow-lg w-full h-96 object-cover"
     />
 
     <div>
 
       <h2 class="text-4xl font-bold text-green-800 mb-6">
-        Who We Are
+        {{ t[state.lang].whoWeAre }}
       </h2>
 
       <p class="text-gray-700 leading-8 mb-4">
-        Tembera u Rwanda is a tourism platform dedicated to showcasing the beauty,
-        culture, wildlife, and landscapes of Rwanda.
+        {{ t[state.lang].aboutText1 }}
       </p>
 
       <p class="text-gray-700 leading-8">
-        We help travelers explore destinations easily and experience the best of
-        Rwanda’s natural and cultural heritage.
+        {{ t[state.lang].aboutText2 }}
       </p>
 
     </div>
@@ -82,7 +82,7 @@ onMounted(() => {
   <div class="text-center mb-12">
 
     <h2 class="text-4xl font-bold text-green-800">
-      Our Mission & Vision
+      {{ t[state.lang].missionVision }}
     </h2>
 
   </div>
@@ -93,12 +93,11 @@ onMounted(() => {
     <div class="bg-white p-8 rounded-xl shadow-lg">
 
       <h3 class="text-2xl font-bold text-green-700 mb-4">
-        Our Mission
+        {{ t[state.lang].mission }}
       </h3>
 
       <p class="text-gray-600 leading-7">
-        To promote tourism in Rwanda by making information about destinations,
-        culture, and travel experiences easily accessible to everyone.
+        {{ t[state.lang].missionText }}
       </p>
 
     </div>
@@ -107,12 +106,11 @@ onMounted(() => {
     <div class="bg-white p-8 rounded-xl shadow-lg">
 
       <h3 class="text-2xl font-bold text-green-700 mb-4">
-        Our Vision
+        {{ t[state.lang].vision }}
       </h3>
 
       <p class="text-gray-600 leading-7">
-        To become the leading digital tourism guide for Rwanda, connecting
-        travelers with unforgettable experiences across the country.
+        {{ t[state.lang].visionText }}
       </p>
 
     </div>
@@ -125,24 +123,36 @@ onMounted(() => {
 <section class="py-16 px-6 md:px-20 bg-white">
 
   <h2 class="text-4xl font-bold text-center text-green-800 mb-12">
-    Why Choose Us
+    {{ t[state.lang].whyChoose }}
   </h2>
 
   <div class="grid md:grid-cols-3 gap-8">
 
     <div class="text-center p-6 shadow-lg rounded-xl">
-      <h3 class="text-xl font-bold text-green-700 mb-3">Trusted Info</h3>
-      <p class="text-gray-600">Accurate and updated tourism information.</p>
+      <h3 class="text-xl font-bold text-green-700 mb-3">
+        {{ t[state.lang].trustedInfo }}
+      </h3>
+      <p class="text-gray-600">
+        {{ t[state.lang].trustedInfoText }}
+      </p>
     </div>
 
     <div class="text-center p-6 shadow-lg rounded-xl">
-      <h3 class="text-xl font-bold text-green-700 mb-3">Easy Access</h3>
-      <p class="text-gray-600">Simple navigation to all destinations.</p>
+      <h3 class="text-xl font-bold text-green-700 mb-3">
+        {{ t[state.lang].easyAccess }}
+      </h3>
+      <p class="text-gray-600">
+        {{ t[state.lang].easyAccessText }}
+      </p>
     </div>
 
     <div class="text-center p-6 shadow-lg rounded-xl">
-      <h3 class="text-xl font-bold text-green-700 mb-3">Beautiful Experience</h3>
-      <p class="text-gray-600">Showcasing the best of Rwanda visually.</p>
+      <h3 class="text-xl font-bold text-green-700 mb-3">
+        {{ t[state.lang].beautifulExperience }}
+      </h3>
+      <p class="text-gray-600">
+        {{ t[state.lang].beautifulExperienceText }}
+      </p>
     </div>
 
   </div>
