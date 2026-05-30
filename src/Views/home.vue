@@ -35,7 +35,7 @@ const recoverHeroVideo = () => {
     @stalled="recoverHeroVideo"
     @error="recoverHeroVideo"
   >
-    <source src="/kivu.mp4" type="video/mp4" />
+    <source src="/video6.mp4" type="video/mp4" />
   </video>
 
   <!-- DARK OVERLAY -->
