@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue"
 import { state, t } from "../i18n"
-import contactHero1 from "../Assets/Image/gisozi.jpg"
-import contactHero2 from "../Assets/Image/inema.jpg"
-import contactHero3 from "../Assets/Image/mount.jpg"
+import contactHero1 from "../Assets/Image/pres.jpg"
+import contactHero2 from "../Assets/Image/kimi.jpg"
+import contactHero3 from "../Assets/Image/king.jpg"
 import mapImage from "../Assets/Image/map.png"
 
 const contactHeroImages = [contactHero1, contactHero2, contactHero3]

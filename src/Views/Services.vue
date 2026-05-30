@@ -4,7 +4,7 @@ import { state, t } from "../i18n"
 import { RouterLink } from "vue-router"
 import serviceHero1 from "../Assets/Image/virunga.jpg"
 import serviceHero2 from "../Assets/Image/akagera.jpg"
-import serviceHero3 from "../Assets/Image/nyungwe.jpg"
+import serviceHero3 from "../Assets/Image/travel.jpg"
 
 const serviceHeroImages = [serviceHero1, serviceHero2, serviceHero3]
 const currentHeroImage = ref(0)

@@ -7,7 +7,10 @@ const galleryImages = Object.entries(
     import: "default",
   })
 )
-  .filter(([path]) => !path.toLowerCase().includes("/logo."))
+  .filter(([path]) => {
+    const lowerPath = path.toLowerCase()
+    return !lowerPath.includes("/logo.") && !lowerPath.includes("/map.")
+  })
   .map(([path, src]) => ({
     src,
     alt: path
