@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue"
 import { state, t } from "../i18n"
-import heroPoster from "../Assets/Image/about1.jpg"
+import heroPoster from "../Assets/Image/virunga.jpg"
 
 const heroVideo = ref(null)
 
